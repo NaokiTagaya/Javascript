@@ -1,0 +1,25 @@
+.stopwatch {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.stopwatch p {
+  font-size: 15px;
+}
+
+.stopwatch span {
+  padding: 0px 10px;
+  font-size: 30px;
+}
+
+.stopwatch-button {
+  display: inline-block;
+}
+
+.push-button {
+  padding: 10px;
+  font-weight: bold;
+  background-color: #DDDDDD;
+  border: 1px solid black;
+  border-radius: 5px;
+}
