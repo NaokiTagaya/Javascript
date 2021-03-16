@@ -1,44 +1,33 @@
 /* ●Javascript群*/
 /* IDからデータ取得*/
-let timer = document.getElementById('timer'); //ストップウォッチのタイマーIDを取得
-let start = document.getElementById('start'); //スタートボタンのタイマーIDを取得
-let stop = document.getElementById('stop');   //ストップボタンのタイマーIDを取得
-let reset = document.getElementById('reset'); //リセットボタンのタイマーIDを取得
+const timer = document.getElementById('timer'); //ストップウォッチのタイマーIDを取得
+//let start = document.getElementById('start'); //スタートボタンのタイマーIDを取得
+//let stop = document.getElementById('stop');   //ストップボタンのタイマーIDを取得
+//let reset = document.getElementById('reset'); //リセットボタンのタイマーIDを取得
 
 /* 必要な変数を宣言*/
 let startTime; 
 let elapsedTime = 0;
-let timerId;
-let timeStop = 0;
+let timeroutId;
 
-/* 時間を適正に表示させるための関数*/
-function calcTime(){
+function countUp() {
   
-  let minute = Math.floor(elapsedTime / 60000);
-  let second = Math.floor(elapsedTime % 60000 / 100);
-  let ms = elapsedTime % 1000; 
+  // 現在時刻とその時分秒を取得
+  const date = new Date(Date.now() - startTime + elapsedTime);
+  const minute = String(date.getMinutes()).padstart(2, '0');
+  const second = String(date.getSeconds()).padstart(2, '0');
+  const ms = String(date.getMilliseconds()).padstart(2, '0');
   
-  minute = ('0' + minute).slice(-2);
-  second = ('0' + second).slice(-2);
-  ms = ('0' + ms).slice(-3);
+  // 表示形式を指定
+  timer.textContent = `${minute}:${second}.${ms}`;
   
-  timer.textContent = minute + ':' + second + ':' + ms;
-}
-
-
-function countUp(){
-  
-  // setTimeoutの返り値を代入
-  timerId = setTimeout(function(){
-    
-    elapsedTime = Date.now() - startTime + timeStop;
-    calcTime();
-    
+  // 10ミリ秒ごとに時間の値を取得
+  timeroutId = setTimeout(() => {
     countUp();
   }, 10);
 }
 
-/* JQuery群*/
+/* ●JQuery群*/
 /* global $*/
 $(document).ready(function(){
   // スタートボタン押下時
@@ -57,8 +46,9 @@ $(document).ready(function(){
     $(".start-button").prop("disabled", false);
     $(".stop-button").prop("disabled", true);
     $(".reset-button").prop("disabled", false);
-    clearTimeout(timerId);
-    timeStop += Date.now() - startTime;
+    // setTimeoutを終了させる
+    clearTimeout(timeroutId);
+    elapsedTime += Date.now() -startTime;
   });
   // リセットボタン押下時
   $(".reset-button").click(function() {
@@ -66,8 +56,9 @@ $(document).ready(function(){
     $(".start-button").prop("disabled", false);
     $(".stop-button").prop("disabled", true);
     $(".reset-button").prop("disabled", true);
+    // 表示を0秒にする
+    timer.textContent = '0:0:0:0';
+    // 経過時間をリセット
     elapsedTime = 0;
-    timeStop = 0;
-    calcTime();
   });
 });
