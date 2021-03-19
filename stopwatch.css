@@ -1,13 +1,13 @@
-.stopwatch {
+#timer {
   display: flex;
   margin-bottom: 30px;
 }
 
-.stopwatch p {
+#timer-font-size {
   font-size: 15px;
 }
 
-.stopwatch span {
+#timer-number-size {
   padding: 0px 10px;
   font-size: 30px;
 }
@@ -22,4 +22,8 @@
   background-color: #DDDDDD;
   border: 1px solid black;
   border-radius: 5px;
+}
+
+.test {
+  font-size: 30px;
 }
