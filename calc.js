@@ -5,11 +5,11 @@ let inputFlg = "initial"; // ボタン押下時のフラグ設定
 function editNumber(letter) 
 {
   // 表示が「0」、もしくは「=」ボタン押下時の場合、上書きする
-  if (calcResult.value =="0" || inputFlg == "calc")
+  if (calcResult.value == "0" || inputFlg == "calc")
   {
     calcResult.value = "";
     // 表示が「0」の時に、「00」が謳歌された場合は「0」表示のまま
-    if (letter =="00")
+    if (letter == "00")
     {
       letter = "0";
     }
@@ -55,7 +55,7 @@ function calc()
   {
     // 計算結果を表示
     calcResult.value = new Function("return " + calcResult.value)();
-    inputFlg ="calc";
+    inputFlg = "calc";
   }
   // 例外発生時
   catch(e)
