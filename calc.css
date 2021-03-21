@@ -1,0 +1,73 @@
+.calc {
+  width: 500px;
+  background-color: #808080;
+  padding: 20px 0px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.calc-result-area input {
+  margin-bottom: 15px;
+  padding: 5px 10px 5px 0px;
+  border: none;
+  background-color: #000000;
+  color: white;
+  text-align: right;
+  width: 98%;
+  font-size: 30px;
+  outline: none
+}
+
+.calc-button {
+  width: 100%;
+  padding-left: 5px;
+}
+
+.calc button {
+  font-size: 25px;
+  padding: 5px 50px;
+  margin-bottom: 5px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 5px;
+}
+
+.button-first button:last-child {
+  background-color: #FFA500;
+  color: white;
+}
+
+.button-second button:last-child {
+  padding: 5px 53px;
+  background-color: #FFA500;
+  color: white;
+}
+
+.button-third button:last-child {
+  padding: 5px 53px;
+  background-color: #FFA500;
+  color: white;
+}
+
+.button-fourth button:nth-child(2) {
+  padding: 5px 43px;
+}
+
+.button-fourth button:nth-child(3) {
+  padding: 5px 53px;
+}
+
+.button-fourth button:last-child {
+  padding: 5px 55px;
+  background-color: #FFA500;
+  color: white;
+}
+
+.button-fifth button {
+  padding: 5px 106.5px;
+}
+
+.button-fifth button:last-child {
+  background-color: #FFA500;
+  color: white;
+}
