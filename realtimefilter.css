@@ -1,0 +1,48 @@
+body {
+  padding: 0px 30px;
+}
+
+img {
+  width: 95%;
+  height: 100%;
+  margin-top: 15px;
+}
+
+.input-keyword {
+  width: 100%;
+  font-size: 14px;
+  height: 20px;
+}
+
+.realtimefilter-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.filter-image {
+  border: 1px solid #C0C0C0;
+  width: 45%;
+  margin: 20px 0px;
+}
+
+.image-main {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.keyword {
+  margin: 15px 0px -10px 15px;
+}
+
+.keyword-list {
+  display: flex;
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+.keyword-list p {
+  margin-left: 10px;
+}
