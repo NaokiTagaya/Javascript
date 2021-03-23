@@ -1,6 +1,6 @@
 /* global $*/
 function search(text) {
-  // 「keyword-list」クラス内全てを処理する
+  // eachで「keyword-list」クラス全てを処理する
   $(".keyword-list").each(function(index, element) {
     // 「keyword-list」クラス内のキーワードを格納する
     let keyword = $(element).text();
