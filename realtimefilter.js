@@ -8,7 +8,7 @@ function search(text) {
       // 入力した文字がキーワードとマッチしなかった場合（-1）、画像を非表示にする
       $(element).parent().css("display", "none");
     }else{
-      // 入力した文字がキーワードとマッチした場合（-1）、画像を表示にする
+      // 入力した文字がキーワードとマッチした場合（-1以外）、画像を表示にする
       $(element).parent().css("display", "block");
     }
   });
